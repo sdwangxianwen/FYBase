@@ -11,6 +11,7 @@
 
 //参数类
 #import "FYParm.h"
+#import "FYURL.h"
 
 //第三方
 #import "FYEmptyView.h"

@@ -22,6 +22,7 @@
 		21036AF0225C787A00B4A054 /* UIView+FYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AEC225C787900B4A054 /* UIView+FYExtension.m */; };
 		21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF4225C7D8900B4A054 /* UITableView+empety.m */; };
 		21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF7225C7D8900B4A054 /* FYEmptyView.m */; };
+		21036AFC225C7FC300B4A054 /* FYURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFB225C7FC300B4A054 /* FYURL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		21036AF5225C7D8900B4A054 /* FYEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYEmptyView.h; sourceTree = "<group>"; };
 		21036AF6225C7D8900B4A054 /* UITableView+empety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+empety.h"; sourceTree = "<group>"; };
 		21036AF7225C7D8900B4A054 /* FYEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYEmptyView.m; sourceTree = "<group>"; };
+		21036AFA225C7FC300B4A054 /* FYURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYURL.h; sourceTree = "<group>"; };
+		21036AFB225C7FC300B4A054 /* FYURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYURL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				21036AF2225C7A9900B4A054 /* FYParm.h */,
+				21036AFA225C7FC300B4A054 /* FYURL.h */,
+				21036AFB225C7FC300B4A054 /* FYURL.m */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21036AFC225C7FC300B4A054 /* FYURL.m in Sources */,
 				21036AEE225C787A00B4A054 /* NSString+PPString.m in Sources */,
 				21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */,
 				21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */,
