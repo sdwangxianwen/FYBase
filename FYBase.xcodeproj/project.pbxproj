@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		21036AA2225C74FB00B4A054 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AA1225C74FB00B4A054 /* AppDelegate.m */; };
-		21036AA5225C74FB00B4A054 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AA4225C74FB00B4A054 /* ViewController.m */; };
-		21036AA8225C74FB00B4A054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21036AA6225C74FB00B4A054 /* Main.storyboard */; };
 		21036AAA225C74FC00B4A054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21036AA9225C74FC00B4A054 /* Assets.xcassets */; };
 		21036AAD225C74FC00B4A054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21036AAB225C74FC00B4A054 /* LaunchScreen.storyboard */; };
 		21036AB0225C74FC00B4A054 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AAF225C74FC00B4A054 /* main.m */; };
 		21036ABA225C74FC00B4A054 /* FYBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AB9225C74FC00B4A054 /* FYBaseTests.m */; };
 		21036AC5225C74FC00B4A054 /* FYBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AC4225C74FC00B4A054 /* FYBaseUITests.m */; };
+		21036ADD225C763D00B4A054 /* FYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036ADC225C763D00B4A054 /* FYTabBarController.m */; };
+		21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036ADF225C765800B4A054 /* FYNavgationController.m */; };
+		21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AE2225C767200B4A054 /* FYBaseViewController.m */; };
+		21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AE5225C768D00B4A054 /* FYBaseModel.m */; };
+		21036AEE225C787A00B4A054 /* NSString+PPString.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AE8225C787900B4A054 /* NSString+PPString.m */; };
+		21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AEB225C787900B4A054 /* UIColor+FYColor.m */; };
+		21036AF0225C787A00B4A054 /* UIView+FYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AEC225C787900B4A054 /* UIView+FYExtension.m */; };
+		21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF4225C7D8900B4A054 /* UITableView+empety.m */; };
+		21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF7225C7D8900B4A054 /* FYEmptyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +45,6 @@
 		21036A9D225C74FB00B4A054 /* FYBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21036AA0225C74FB00B4A054 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21036AA1225C74FB00B4A054 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		21036AA3225C74FB00B4A054 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		21036AA4225C74FB00B4A054 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		21036AA7225C74FB00B4A054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21036AA9225C74FC00B4A054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21036AAC225C74FC00B4A054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21036AAE225C74FC00B4A054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +55,26 @@
 		21036AC0225C74FC00B4A054 /* FYBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21036AC4225C74FC00B4A054 /* FYBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBaseUITests.m; sourceTree = "<group>"; };
 		21036AC6225C74FC00B4A054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21036ADB225C763D00B4A054 /* FYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYTabBarController.h; sourceTree = "<group>"; };
+		21036ADC225C763D00B4A054 /* FYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYTabBarController.m; sourceTree = "<group>"; };
+		21036ADE225C765800B4A054 /* FYNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYNavgationController.h; sourceTree = "<group>"; };
+		21036ADF225C765800B4A054 /* FYNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYNavgationController.m; sourceTree = "<group>"; };
+		21036AE1225C767200B4A054 /* FYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBaseViewController.h; sourceTree = "<group>"; };
+		21036AE2225C767200B4A054 /* FYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBaseViewController.m; sourceTree = "<group>"; };
+		21036AE4225C768D00B4A054 /* FYBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYBaseModel.h; sourceTree = "<group>"; };
+		21036AE5225C768D00B4A054 /* FYBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYBaseModel.m; sourceTree = "<group>"; };
+		21036AE7225C76CF00B4A054 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		21036AE8225C787900B4A054 /* NSString+PPString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PPString.m"; sourceTree = "<group>"; };
+		21036AE9225C787900B4A054 /* NSString+PPString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PPString.h"; sourceTree = "<group>"; };
+		21036AEA225C787900B4A054 /* UIView+FYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FYExtension.h"; sourceTree = "<group>"; };
+		21036AEB225C787900B4A054 /* UIColor+FYColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FYColor.m"; sourceTree = "<group>"; };
+		21036AEC225C787900B4A054 /* UIView+FYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYExtension.m"; sourceTree = "<group>"; };
+		21036AED225C787900B4A054 /* UIColor+FYColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FYColor.h"; sourceTree = "<group>"; };
+		21036AF2225C7A9900B4A054 /* FYParm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYParm.h; sourceTree = "<group>"; };
+		21036AF4225C7D8900B4A054 /* UITableView+empety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+empety.m"; sourceTree = "<group>"; };
+		21036AF5225C7D8900B4A054 /* FYEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYEmptyView.h; sourceTree = "<group>"; };
+		21036AF6225C7D8900B4A054 /* UITableView+empety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+empety.h"; sourceTree = "<group>"; };
+		21036AF7225C7D8900B4A054 /* FYEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYEmptyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +127,8 @@
 			children = (
 				21036AA0225C74FB00B4A054 /* AppDelegate.h */,
 				21036AA1225C74FB00B4A054 /* AppDelegate.m */,
-				21036AA3225C74FB00B4A054 /* ViewController.h */,
-				21036AA4225C74FB00B4A054 /* ViewController.m */,
-				21036AA6225C74FB00B4A054 /* Main.storyboard */,
+				21036AE7225C76CF00B4A054 /* PrefixHeader.pch */,
+				21036AD9225C75E900B4A054 /* Classes */,
 				21036AA9225C74FC00B4A054 /* Assets.xcassets */,
 				21036AAB225C74FC00B4A054 /* LaunchScreen.storyboard */,
 				21036AAE225C74FC00B4A054 /* Info.plist */,
@@ -130,6 +153,96 @@
 				21036AC6225C74FC00B4A054 /* Info.plist */,
 			);
 			path = FYBaseUITests;
+			sourceTree = "<group>";
+		};
+		21036AD2225C757600B4A054 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21036ADB225C763D00B4A054 /* FYTabBarController.h */,
+				21036ADC225C763D00B4A054 /* FYTabBarController.m */,
+				21036ADE225C765800B4A054 /* FYNavgationController.h */,
+				21036ADF225C765800B4A054 /* FYNavgationController.m */,
+				21036AE1225C767200B4A054 /* FYBaseViewController.h */,
+				21036AE2225C767200B4A054 /* FYBaseViewController.m */,
+				21036AE4225C768D00B4A054 /* FYBaseModel.h */,
+				21036AE5225C768D00B4A054 /* FYBaseModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		21036AD4225C758B00B4A054 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				21036ADA225C760400B4A054 /* Manager */,
+				21036AD8225C75CD00B4A054 /* Marco */,
+				21036AD7225C75C100B4A054 /* Category */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		21036AD5225C75A400B4A054 /* Moudle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Moudle;
+			sourceTree = "<group>";
+		};
+		21036AD6225C75B500B4A054 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				21036AF3225C7D8900B4A054 /* FYEmptyView */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		21036AD7225C75C100B4A054 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				21036AE9225C787900B4A054 /* NSString+PPString.h */,
+				21036AE8225C787900B4A054 /* NSString+PPString.m */,
+				21036AED225C787900B4A054 /* UIColor+FYColor.h */,
+				21036AEB225C787900B4A054 /* UIColor+FYColor.m */,
+				21036AEA225C787900B4A054 /* UIView+FYExtension.h */,
+				21036AEC225C787900B4A054 /* UIView+FYExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		21036AD8225C75CD00B4A054 /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				21036AF2225C7A9900B4A054 /* FYParm.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		21036AD9225C75E900B4A054 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21036AD6225C75B500B4A054 /* Third */,
+				21036AD5225C75A400B4A054 /* Moudle */,
+				21036AD4225C758B00B4A054 /* Tool */,
+				21036AD2225C757600B4A054 /* Base */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21036ADA225C760400B4A054 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		21036AF3225C7D8900B4A054 /* FYEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				21036AF4225C7D8900B4A054 /* UITableView+empety.m */,
+				21036AF5225C7D8900B4A054 /* FYEmptyView.h */,
+				21036AF6225C7D8900B4A054 /* UITableView+empety.h */,
+				21036AF7225C7D8900B4A054 /* FYEmptyView.m */,
+			);
+			path = FYEmptyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +350,6 @@
 			files = (
 				21036AAD225C74FC00B4A054 /* LaunchScreen.storyboard in Resources */,
 				21036AAA225C74FC00B4A054 /* Assets.xcassets in Resources */,
-				21036AA8225C74FB00B4A054 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21036AA5225C74FB00B4A054 /* ViewController.m in Sources */,
+				21036AEE225C787A00B4A054 /* NSString+PPString.m in Sources */,
+				21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */,
+				21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */,
+				21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */,
 				21036AB0225C74FC00B4A054 /* main.m in Sources */,
+				21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */,
+				21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */,
 				21036AA2225C74FB00B4A054 /* AppDelegate.m in Sources */,
+				21036AF0225C787A00B4A054 /* UIView+FYExtension.m in Sources */,
+				21036ADD225C763D00B4A054 /* FYTabBarController.m in Sources */,
+				21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +420,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		21036AA6225C74FB00B4A054 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21036AA7225C74FB00B4A054 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		21036AAB225C74FC00B4A054 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,7 +548,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = FYBase/PrefixHeader.pch;
 				INFOPLIST_FILE = FYBase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +566,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = FYBase/PrefixHeader.pch;
 				INFOPLIST_FILE = FYBase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
