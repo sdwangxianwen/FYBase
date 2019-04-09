@@ -12,7 +12,6 @@
 
 static char ListenTaarViewMove[] = "ListenTaarViewMove";
 @interface FYGestureBaseController ()
-
 @end
 
 @implementation FYGestureBaseController
@@ -37,7 +36,6 @@ static char ListenTaarViewMove[] = "ListenTaarViewMove";
     UIViewController *rootVC = appDelegate.window.rootViewController;
     UIViewController *presentedVC = rootVC.presentedViewController;
     appDelegate.gestureBaseView.hidden = NO;
-    
     appDelegate.gestureBaseView.maskView.backgroundColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:kMaskingAlpha];
     appDelegate.gestureBaseView.imgView.transform = CGAffineTransformMakeScale(kWindowToScale, kWindowToScale);
     

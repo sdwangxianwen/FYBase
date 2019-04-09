@@ -18,7 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FYGestureBaseController : UIViewController
 @property (nonatomic) popType blankType;// default is popTypeViewController.
-@property (nonatomic) Boolean isEnablePanGesture;// default is YES.
+/**
+ 是否需要添加返回手势,默认是
+ */
+@property (nonatomic) Boolean isEnablePanGesture;
 
 - (void)popViewController;
 - (void)popToViewController:(UIViewController *)viewController;
@@ -27,7 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
+NS_ASSUME_NONNULL_BEGIN
 @interface gestureBaseView : UIView
+
 @property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) NSMutableArray *arrayImage;
@@ -38,3 +43,4 @@ NS_ASSUME_NONNULL_END
 - (void)removeObserver;
 - (void)addObserver;
 @end
+NS_ASSUME_NONNULL_END
