@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FYNavgationController : UINavigationController
-
+@property (strong ,nonatomic) NSMutableArray *arrayScreenshot;
+@property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @end
 
 NS_ASSUME_NONNULL_END

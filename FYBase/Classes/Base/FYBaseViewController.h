@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FYGestureBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FYBaseViewController : UIViewController
+@interface FYBaseViewController : FYGestureBaseController
 /**
  主视图,懒加载,需要的时候调用即可
  */

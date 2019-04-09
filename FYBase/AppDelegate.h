@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FYGestureBaseController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (nonatomic, strong) gestureBaseView *gestureBaseView;
 @property (strong, nonatomic) UIWindow *window;
-
++ (AppDelegate* )shareAppDelegate;
+- (void)setupRootViewController:(UIViewController *)rootViewController;
 
 @end
 

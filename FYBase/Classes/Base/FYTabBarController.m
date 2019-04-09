@@ -7,6 +7,7 @@
 //
 
 #import "FYTabBarController.h"
+#import "HomeViewController.h"
 
 @interface FYTabBarController ()
 
@@ -16,17 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addchildViewController];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)addchildViewController {
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    [self addChildViewController:homeVC title:@"首页" image:@"" selectImage:@""];
 }
-*/
+
+-(void)addChildViewController:(UIViewController *)childController
+                        title:(NSString *)title
+                        image:(NSString *)image
+                  selectImage:(NSString *)selectImage {
+    childController.title = title;
+    childController.tabBarItem.image = [UIImage imageNamed:image];
+    childController.tabBarItem.selectedImage =[UIImage imageNamed:selectImage];
+    FYNavgationController *nav = [[FYNavgationController alloc] initWithRootViewController:childController];
+    [self addChildViewController:nav];
+}
+
 
 @end

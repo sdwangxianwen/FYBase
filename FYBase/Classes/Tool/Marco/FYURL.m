@@ -7,6 +7,18 @@
 //
 
 #import "FYURL.h"
+
+const Boolean kIsOpenIphoneXStyle = YES;
+const CGFloat kIphoneXStyleCorner = 40.0;
+const NSInteger kUserGuiderImgCount = 3;
+const Boolean kIsCanleSystemPan = YES;
+const CGFloat kDistanceToLeft = 70.0;
+const CGFloat kWindowToScale = 1.0;
+const CGFloat kMaskingAlpha = 0.9;
+const CGFloat kGestureSpeed = 0.3;
+const CGFloat kDistanceToPan = 10.0;
+const CGFloat kDistanceToStart = 40.0;
+
 #define kInDeBug
 
 #ifdef kInDeBug

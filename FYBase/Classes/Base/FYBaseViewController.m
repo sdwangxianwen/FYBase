@@ -30,6 +30,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 
@@ -47,7 +48,16 @@
     self.navigationItem.leftBarButtonItem = barItem;
 }
 -(void)leftBtnClick {
-    [self.navigationController popViewControllerAnimated:YES];
+    switch (self.blankType) {
+        case popTypeViewController:
+            [self popViewController];
+            break;
+        case popTypeToRootViewController:
+            [self popToRootViewController];
+            break;
+        default:
+            break;
+    }
 }
 
 /**

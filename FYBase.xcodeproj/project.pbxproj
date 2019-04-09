@@ -24,6 +24,8 @@
 		21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF7225C7D8900B4A054 /* FYEmptyView.m */; };
 		21036AFC225C7FC300B4A054 /* FYURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFB225C7FC300B4A054 /* FYURL.m */; };
 		21036B00225C85A200B4A054 /* FYAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFE225C85A200B4A054 /* FYAlert.m */; };
+		21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B04225C8AB900B4A054 /* HomeViewController.m */; };
+		21036B08225C8D5500B4A054 /* FYGestureBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B07225C8D5500B4A054 /* FYGestureBaseController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		21036AFB225C7FC300B4A054 /* FYURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYURL.m; sourceTree = "<group>"; };
 		21036AFE225C85A200B4A054 /* FYAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAlert.m; sourceTree = "<group>"; };
 		21036AFF225C85A200B4A054 /* FYAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAlert.h; sourceTree = "<group>"; };
+		21036B03225C8AB900B4A054 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		21036B04225C8AB900B4A054 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		21036B06225C8D5500B4A054 /* FYGestureBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYGestureBaseController.h; sourceTree = "<group>"; };
+		21036B07225C8D5500B4A054 /* FYGestureBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYGestureBaseController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,8 @@
 				21036ADF225C765800B4A054 /* FYNavgationController.m */,
 				21036AE1225C767200B4A054 /* FYBaseViewController.h */,
 				21036AE2225C767200B4A054 /* FYBaseViewController.m */,
+				21036B06225C8D5500B4A054 /* FYGestureBaseController.h */,
+				21036B07225C8D5500B4A054 /* FYGestureBaseController.m */,
 				21036AE4225C768D00B4A054 /* FYBaseModel.h */,
 				21036AE5225C768D00B4A054 /* FYBaseModel.m */,
 			);
@@ -189,6 +197,7 @@
 		21036AD5225C75A400B4A054 /* Moudle */ = {
 			isa = PBXGroup;
 			children = (
+				21036B01225C8A9100B4A054 /* Home */,
 			);
 			path = Moudle;
 			sourceTree = "<group>";
@@ -261,6 +270,23 @@
 				21036AFE225C85A200B4A054 /* FYAlert.m */,
 			);
 			path = FYAlert;
+			sourceTree = "<group>";
+		};
+		21036B01225C8A9100B4A054 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				21036B02225C8AA000B4A054 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		21036B02225C8AA000B4A054 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21036B03225C8AB900B4A054 /* HomeViewController.h */,
+				21036B04225C8AB900B4A054 /* HomeViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +423,8 @@
 				21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */,
 				21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */,
 				21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */,
+				21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */,
+				21036B08225C8D5500B4A054 /* FYGestureBaseController.m in Sources */,
 				21036AB0225C74FC00B4A054 /* main.m in Sources */,
 				21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */,
 				21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */,
