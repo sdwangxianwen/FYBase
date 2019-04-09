@@ -23,6 +23,7 @@
 		21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF4225C7D8900B4A054 /* UITableView+empety.m */; };
 		21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AF7225C7D8900B4A054 /* FYEmptyView.m */; };
 		21036AFC225C7FC300B4A054 /* FYURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFB225C7FC300B4A054 /* FYURL.m */; };
+		21036B00225C85A200B4A054 /* FYAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFE225C85A200B4A054 /* FYAlert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		21036AF7225C7D8900B4A054 /* FYEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYEmptyView.m; sourceTree = "<group>"; };
 		21036AFA225C7FC300B4A054 /* FYURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYURL.h; sourceTree = "<group>"; };
 		21036AFB225C7FC300B4A054 /* FYURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYURL.m; sourceTree = "<group>"; };
+		21036AFE225C85A200B4A054 /* FYAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAlert.m; sourceTree = "<group>"; };
+		21036AFF225C85A200B4A054 /* FYAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAlert.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +131,10 @@
 		21036A9F225C74FB00B4A054 /* FYBase */ = {
 			isa = PBXGroup;
 			children = (
+				21036AD9225C75E900B4A054 /* Classes */,
 				21036AA0225C74FB00B4A054 /* AppDelegate.h */,
 				21036AA1225C74FB00B4A054 /* AppDelegate.m */,
 				21036AE7225C76CF00B4A054 /* PrefixHeader.pch */,
-				21036AD9225C75E900B4A054 /* Classes */,
 				21036AA9225C74FC00B4A054 /* Assets.xcassets */,
 				21036AAB225C74FC00B4A054 /* LaunchScreen.storyboard */,
 				21036AAE225C74FC00B4A054 /* Info.plist */,
@@ -193,6 +196,7 @@
 		21036AD6225C75B500B4A054 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				21036AFD225C858900B4A054 /* FYAlert */,
 				21036AF3225C7D8900B4A054 /* FYEmptyView */,
 			);
 			path = Third;
@@ -224,10 +228,10 @@
 		21036AD9225C75E900B4A054 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				21036AD6225C75B500B4A054 /* Third */,
-				21036AD5225C75A400B4A054 /* Moudle */,
-				21036AD4225C758B00B4A054 /* Tool */,
 				21036AD2225C757600B4A054 /* Base */,
+				21036AD5225C75A400B4A054 /* Moudle */,
+				21036AD6225C75B500B4A054 /* Third */,
+				21036AD4225C758B00B4A054 /* Tool */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,6 +252,15 @@
 				21036AF7225C7D8900B4A054 /* FYEmptyView.m */,
 			);
 			path = FYEmptyView;
+			sourceTree = "<group>";
+		};
+		21036AFD225C858900B4A054 /* FYAlert */ = {
+			isa = PBXGroup;
+			children = (
+				21036AFF225C85A200B4A054 /* FYAlert.h */,
+				21036AFE225C85A200B4A054 /* FYAlert.m */,
+			);
+			path = FYAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +401,7 @@
 				21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */,
 				21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */,
 				21036AA2225C74FB00B4A054 /* AppDelegate.m in Sources */,
+				21036B00225C85A200B4A054 /* FYAlert.m in Sources */,
 				21036AF0225C787A00B4A054 /* UIView+FYExtension.m in Sources */,
 				21036ADD225C763D00B4A054 /* FYTabBarController.m in Sources */,
 				21036AF9225C7D8900B4A054 /* FYEmptyView.m in Sources */,

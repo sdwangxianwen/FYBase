@@ -48,4 +48,26 @@ typedef NS_ENUM(NSInteger,borderDirectionType) {
  */
 - (void)sn_ClipToCircle:(CGRect)frame borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width;
 
+/**
+ 缩放进场动画
+
+ @param duration 动画时长
+ @param scaleRatio 缩放比例
+ @param finishBlock 回调
+ */
+- (void)animation_scaleShowWithDuration:(CGFloat)duration
+                                  ratio:(CGFloat)scaleRatio
+                            finishBlock:(void(^)(void))finishBlock;
+
+/**
+ 缩放出厂动画
+
+ @param duration 动画时长
+ @param scaleRatio 缩放比例
+ @param finishBlock 回调
+ */
+- (void)animation_scaleDismissWithDuration:(CGFloat)duration
+                                     ratio:(CGFloat)scaleRatio
+                               finishBlock:(void(^)(void))finishBlock;
+
 @end

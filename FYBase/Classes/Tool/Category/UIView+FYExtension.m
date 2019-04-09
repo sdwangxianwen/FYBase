@@ -191,6 +191,66 @@ static const void *kborderLayerKey = &kborderLayerKey;
     }
     [self.layer addSublayer:border];
 }
+/*!
+ *  缩放显示动画
+ *
+ *  @param duration    持续时间，默认：1.0f
+ *  @param scaleRatio  缩放比率，默认：1.6f
+ *  @param finishBlock 缩放完成回调
+ */
+- (void)animation_scaleShowWithDuration:(CGFloat)duration
+                                  ratio:(CGFloat)scaleRatio
+                            finishBlock:(void(^)(void))finishBlock {
+    if (!duration) {
+        duration = 1.0f;
+    }
+    if (!scaleRatio) {
+        scaleRatio = 1.6f;
+    }
+    self.transform = CGAffineTransformScale(self.transform, 0.01f, 0.01f);
+    [UIView animateWithDuration:duration animations:^{
+        self.transform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:duration animations:^{
+            self.transform = CGAffineTransformIdentity;
+            //            self.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+        } completion:^(BOOL finished) {
+            if (finishBlock)
+            {
+                finishBlock();
+            }
+        }];
+    }];
+}
 
+/*!
+ *  缩放消失动画
+ *
+ *  @param duration    持续时间，默认：1.0f
+ *  @param scaleRatio  缩放比率，默认：1.6f
+ *  @param finishBlock 缩放完成回调
+ */
+- (void)animation_scaleDismissWithDuration:(CGFloat)duration
+                                     ratio:(CGFloat)scaleRatio
+                               finishBlock:(void(^)(void))finishBlock {
+    if (!duration) {
+        duration = 1.0f;
+    }
+    if (!scaleRatio) {
+        scaleRatio = 1.6f;
+    }
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.transform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:duration animations:^{
+            self.transform = CGAffineTransformMakeScale(0.0001f, 0.0001f);
+        } completion:^(BOOL finished) {
+            if (finishBlock) {
+                finishBlock();
+            }
+        }];
+    }];
+}
 
 @end
