@@ -106,6 +106,8 @@
         }
         _mainTableView.showsVerticalScrollIndicator = NO;
         _mainTableView.showsHorizontalScrollIndicator = NO;
+        _mainTableView.delegate = self;
+        _mainTableView.dataSource = self;
         self.mainTableView.estimatedRowHeight = 100;
         self.mainTableView.rowHeight = UITableViewAutomaticDimension;
         if (@available(iOS 11.0, *)) {
@@ -123,5 +125,58 @@
     }
     return _mainTableView;
 }
+
+-(NSMutableArray *)listArrM {
+    if (!_listArrM) {
+        _listArrM = [NSMutableArray array];
+    }
+    return _listArrM;
+}
+
+#pragma mark:tableviewsource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (self.isGroup) {
+        return self.listArrM.count;
+    } else {
+        return 1;
+    }
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.isGroup) {
+        if ([self.listArrM[section] isKindOfClass:[NSArray class]]) {
+            NSArray *arr = self.listArrM[section];
+            return arr.count;
+        }
+        return 1;
+    }
+    return self.listArrM.count;
+}
+
+#pragma mark:tableviewDelegate
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   UITableViewCell *cell = [[NSClassFromString(self.cellID) alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:self.cellID];
+    if (!cell) {
+        cell = [tableView dequeueReusableCellWithIdentifier:self.cellID forIndexPath:indexPath];
+    }
+    if (self.isGroup) {
+        if ([self.listArrM[indexPath.section] isKindOfClass:[NSArray class]]) {
+            NSArray *arr = self.listArrM[indexPath.section];
+            [self configureCell:cell item:arr[indexPath.row]];
+        } else {
+           [self configureCell:cell item:self.listArrM[indexPath.section]];
+        }
+        
+    } else {
+        [self configureCell:cell item:self.listArrM[indexPath.row]];
+    }
+   
+    return cell;
+}
+
+- (void)configureCell:(id)cell item:(id)item {
+    
+}
+
+
 
 @end

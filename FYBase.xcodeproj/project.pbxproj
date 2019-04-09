@@ -26,6 +26,7 @@
 		21036B00225C85A200B4A054 /* FYAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFE225C85A200B4A054 /* FYAlert.m */; };
 		21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B04225C8AB900B4A054 /* HomeViewController.m */; };
 		21036B08225C8D5500B4A054 /* FYGestureBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B07225C8D5500B4A054 /* FYGestureBaseController.m */; };
+		21036B0C225CA02B00B4A054 /* FYHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		21036B04225C8AB900B4A054 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		21036B06225C8D5500B4A054 /* FYGestureBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYGestureBaseController.h; sourceTree = "<group>"; };
 		21036B07225C8D5500B4A054 /* FYGestureBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYGestureBaseController.m; sourceTree = "<group>"; };
+		21036B0A225CA02B00B4A054 /* FYHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYHomeTableViewCell.h; sourceTree = "<group>"; };
+		21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHomeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,7 @@
 		21036B01225C8A9100B4A054 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				21036B09225CA01400B4A054 /* View */,
 				21036B02225C8AA000B4A054 /* Controller */,
 			);
 			path = Home;
@@ -287,6 +291,15 @@
 				21036B04225C8AB900B4A054 /* HomeViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		21036B09225CA01400B4A054 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21036B0A225CA02B00B4A054 /* FYHomeTableViewCell.h */,
+				21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +442,7 @@
 				21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */,
 				21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */,
 				21036AA2225C74FB00B4A054 /* AppDelegate.m in Sources */,
+				21036B0C225CA02B00B4A054 /* FYHomeTableViewCell.m in Sources */,
 				21036B00225C85A200B4A054 /* FYAlert.m in Sources */,
 				21036AF0225C787A00B4A054 /* UIView+FYExtension.m in Sources */,
 				21036ADD225C763D00B4A054 /* FYTabBarController.m in Sources */,

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FYBaseViewController : FYGestureBaseController
+@interface FYBaseViewController : FYGestureBaseController<UITableViewDelegate,UITableViewDataSource>
 /**
  主视图,懒加载,需要的时候调用即可
  */
@@ -32,6 +32,18 @@ NS_ASSUME_NONNULL_BEGIN
  是否需要上拉加载
  */
 @property (nonatomic,assign)BOOL needUpLoad;
+@property (nonatomic, strong)NSMutableArray *listArrM; //数据的数组
+@property (nonatomic, strong)NSString *cellID;
+/**
+ //是否分组
+ */
+@property(nonatomic,assign)BOOL isGroup;
+/**
+ 绑定cell的数据
+ @param cell 自定义cell
+
+ */
+- (void)configureCell:(id)cell item:(id)item;
 /**
  创建nav的右边按钮
  */
