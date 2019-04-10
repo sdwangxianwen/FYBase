@@ -161,5 +161,23 @@
     }
 }
 
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
+//        if (offsetY > StatusBarHeight) {
+//            self.fd_prefersNavigationBarHidden = NO;
+////            self.customNav.alpha = MIN(1,1 - (( NavBarHight + STATUS_BAR_HEIGHT - offsetY) / NavBarHight));
+//        }else {
+//            self.fd_prefersNavigationBarHidden = YES;
+////            self.customNav.alpha = 0;
+//        }
+//    } else {
+//        if (offsetY > StatusBarHeight) {
+////            self.navigationItem.title = self.titleLabel.text;
+//        } else {
+//            self.navigationItem.title = @"";
+//        }
+//    }
+//}
 
 @end

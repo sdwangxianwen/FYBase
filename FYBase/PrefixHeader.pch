@@ -17,10 +17,7 @@
 #import "FYEmptyView.h"
 
 //工具类
-#import "NSString+PPString.h"
-#import "UIView+FYExtension.h"
-#import "UIColor+FYColor.h"
-#import "UITableView+empety.h"
+#import "FYCategoryHeader.h"
 
 //基类
 #import "FYBaseModel.h"
