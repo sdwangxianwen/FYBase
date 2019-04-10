@@ -15,6 +15,8 @@
 
 @implementation HomeViewController
 
+
+
 -(void)configureCell:(FYHomeTableViewCell *)cell item:(NSString *)item {
     cell.label.text = item;
 }
@@ -26,12 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"首页";
     self.isGroup = YES;
     self.cellID = @"FYHomeTableViewCell";
     self.listArrM = @[@[@"1",@"2"],@[@"3",@"4"]].mutableCopy;
     [self.view addSubview:self.mainTableView];
-    // Do any additional setup after loading the view.
 }
 
 

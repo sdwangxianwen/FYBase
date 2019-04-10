@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FYGestureBaseController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FYBaseViewController : FYGestureBaseController<UITableViewDelegate,UITableViewDataSource>
+@interface FYBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 /**
  主视图,懒加载,需要的时候调用即可
  */
@@ -35,13 +36,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSMutableArray *listArrM; //数据的数组
 @property (nonatomic, strong)NSString *cellID;
 /**
+ //创建多个不同的cell的数组,以字典形式列出,key值代表对应的第几行或是第几组
+ */
+//@property (nonatomic, strong)NSArray<NSDictionary *> *cellArr;
+/**
  //是否分组
  */
 @property(nonatomic,assign)BOOL isGroup;
 /**
- 绑定cell的数据
+ 绑定cell的数据,只是用简单的cell布局,复杂的还是用常规代理方法实现
  @param cell 自定义cell
-
  */
 - (void)configureCell:(id)cell item:(id)item;
 /**

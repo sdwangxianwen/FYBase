@@ -14,24 +14,14 @@
 
 @implementation FYBaseViewController
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
-        [self initLeftBtn];
-    } else {
-        [self.navigationController setNavigationBarHidden:YES];
-    }
-    
-}
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view.
+    if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
+        [self initLeftBtn];
+    } else {
+        self.fd_prefersNavigationBarHidden = YES;
+    }
 }
 
 //MARK:创建左边按钮
@@ -48,16 +38,7 @@
     self.navigationItem.leftBarButtonItem = barItem;
 }
 -(void)leftBtnClick {
-    switch (self.blankType) {
-        case popTypeViewController:
-            [self popViewController];
-            break;
-        case popTypeToRootViewController:
-            [self popToRootViewController];
-            break;
-        default:
-            break;
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /**
@@ -158,18 +139,7 @@
     if (!cell) {
         cell = [tableView dequeueReusableCellWithIdentifier:self.cellID forIndexPath:indexPath];
     }
-    if (self.isGroup) {
-        if ([self.listArrM[indexPath.section] isKindOfClass:[NSArray class]]) {
-            NSArray *arr = self.listArrM[indexPath.section];
-            [self configureCell:cell item:arr[indexPath.row]];
-        } else {
-           [self configureCell:cell item:self.listArrM[indexPath.section]];
-        }
-        
-    } else {
-        [self configureCell:cell item:self.listArrM[indexPath.row]];
-    }
-   
+    [self configCell:cell indexPath:indexPath];
     return cell;
 }
 
@@ -177,6 +147,19 @@
     
 }
 
+-(void)configCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+    if (self.isGroup) {
+        if ([self.listArrM[indexPath.section] isKindOfClass:[NSArray class]]) {
+            NSArray *arr = self.listArrM[indexPath.section];
+            [self configureCell:cell item:arr[indexPath.row]];
+        } else {
+            [self configureCell:cell item:self.listArrM[indexPath.section]];
+        }
+        
+    } else {
+        [self configureCell:cell item:self.listArrM[indexPath.row]];
+    }
+}
 
 
 @end

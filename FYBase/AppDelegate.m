@@ -58,36 +58,7 @@
 - (void)setupRootController {
     FYTabBarController *tab = [[FYTabBarController alloc] init];
     self.window.rootViewController = tab;
-    [self setupRootViewController:tab];
-    
 }
-
-- (void)setupRootViewController:(UIViewController *)rootViewController {
-    
-    rootViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [UIView transitionWithView:self.window duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-        BOOL oldState = [UIView areAnimationsEnabled];
-        [UIView setAnimationsEnabled:NO];
-        [UIApplication sharedApplication].keyWindow.rootViewController = rootViewController;
-        [UIView setAnimationsEnabled:oldState];
-    } completion:nil];
-    
-    
-    if (!self.gestureBaseView) {
-        self.window.rootViewController = rootViewController;
-        self.gestureBaseView = [[gestureBaseView alloc] initWithFrame:CGRectMake(0, 0, self.window.frame.size.width, self.window.frame.size.height)];
-        [self.window insertSubview:self.gestureBaseView atIndex:0];
-    }else{
-        [self.gestureBaseView removeObserver];
-        self.window.rootViewController = rootViewController;
-        [self.gestureBaseView addObserver];
-        [self.window sendSubviewToBack:self.gestureBaseView];
-    }
-    
-    self.gestureBaseView.hidden = YES;
-    
-}
-
 
 
 @end

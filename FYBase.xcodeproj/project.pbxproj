@@ -25,8 +25,9 @@
 		21036AFC225C7FC300B4A054 /* FYURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFB225C7FC300B4A054 /* FYURL.m */; };
 		21036B00225C85A200B4A054 /* FYAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036AFE225C85A200B4A054 /* FYAlert.m */; };
 		21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B04225C8AB900B4A054 /* HomeViewController.m */; };
-		21036B08225C8D5500B4A054 /* FYGestureBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B07225C8D5500B4A054 /* FYGestureBaseController.m */; };
 		21036B0C225CA02B00B4A054 /* FYHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */; };
+		21036B10225D888900B4A054 /* FYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0F225D888900B4A054 /* FYHomeModel.m */; };
+		21036B13225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +87,12 @@
 		21036AFF225C85A200B4A054 /* FYAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAlert.h; sourceTree = "<group>"; };
 		21036B03225C8AB900B4A054 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		21036B04225C8AB900B4A054 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		21036B06225C8D5500B4A054 /* FYGestureBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYGestureBaseController.h; sourceTree = "<group>"; };
-		21036B07225C8D5500B4A054 /* FYGestureBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYGestureBaseController.m; sourceTree = "<group>"; };
 		21036B0A225CA02B00B4A054 /* FYHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYHomeTableViewCell.h; sourceTree = "<group>"; };
 		21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHomeTableViewCell.m; sourceTree = "<group>"; };
+		21036B0E225D888900B4A054 /* FYHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYHomeModel.h; sourceTree = "<group>"; };
+		21036B0F225D888900B4A054 /* FYHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHomeModel.m; sourceTree = "<group>"; };
+		21036B11225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,14 +176,14 @@
 		21036AD2225C757600B4A054 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				21036B11225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.h */,
+				21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */,
 				21036ADB225C763D00B4A054 /* FYTabBarController.h */,
 				21036ADC225C763D00B4A054 /* FYTabBarController.m */,
 				21036ADE225C765800B4A054 /* FYNavgationController.h */,
 				21036ADF225C765800B4A054 /* FYNavgationController.m */,
 				21036AE1225C767200B4A054 /* FYBaseViewController.h */,
 				21036AE2225C767200B4A054 /* FYBaseViewController.m */,
-				21036B06225C8D5500B4A054 /* FYGestureBaseController.h */,
-				21036B07225C8D5500B4A054 /* FYGestureBaseController.m */,
 				21036AE4225C768D00B4A054 /* FYBaseModel.h */,
 				21036AE5225C768D00B4A054 /* FYBaseModel.m */,
 			);
@@ -278,6 +281,7 @@
 		21036B01225C8A9100B4A054 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				21036B0D225D886F00B4A054 /* Model */,
 				21036B09225CA01400B4A054 /* View */,
 				21036B02225C8AA000B4A054 /* Controller */,
 			);
@@ -300,6 +304,15 @@
 				21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		21036B0D225D886F00B4A054 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21036B0E225D888900B4A054 /* FYHomeModel.h */,
+				21036B0F225D888900B4A054 /* FYHomeModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,14 +444,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21036B13225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				21036AFC225C7FC300B4A054 /* FYURL.m in Sources */,
 				21036AEE225C787A00B4A054 /* NSString+PPString.m in Sources */,
 				21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */,
 				21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */,
 				21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */,
 				21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */,
-				21036B08225C8D5500B4A054 /* FYGestureBaseController.m in Sources */,
 				21036AB0225C74FC00B4A054 /* main.m in Sources */,
+				21036B10225D888900B4A054 /* FYHomeModel.m in Sources */,
 				21036AE3225C767200B4A054 /* FYBaseViewController.m in Sources */,
 				21036AE6225C768D00B4A054 /* FYBaseModel.m in Sources */,
 				21036AA2225C74FB00B4A054 /* AppDelegate.m in Sources */,
