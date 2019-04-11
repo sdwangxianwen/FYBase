@@ -9,14 +9,13 @@
 #import "FYBaseViewController.h"
 
 @interface FYBaseViewController ()
-
 @end
 
 @implementation FYBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self createBgview];
     if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
         [self initLeftBtn];
     } else {
@@ -80,8 +79,9 @@
 -(UITableView *)mainTableView {
     if (!_mainTableView) {
         _mainTableView = [[UITableView alloc] init];
+        _mainTableView.backgroundColor = [UIColor clearColor];
         if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
-            _mainTableView.frame = CGRectMake(0, NavBarHight, kScreenw, kScreenH - NavBarHight);
+            _mainTableView.frame = CGRectMake(0, 0, kScreenw, kScreenH);
         } else {
             _mainTableView.frame = CGRectMake(0, 0, kScreenw, kScreenH - TabBarHeight);
         }
@@ -89,6 +89,7 @@
         _mainTableView.showsHorizontalScrollIndicator = NO;
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
+        _mainTableView.tableFooterView = [UIView new];
         self.mainTableView.estimatedRowHeight = 100;
         self.mainTableView.rowHeight = UITableViewAutomaticDimension;
         if (@available(iOS 11.0, *)) {
@@ -159,6 +160,59 @@
     } else {
         [self configureCell:cell item:self.listArrM[indexPath.row]];
     }
+}
+-(void)createBgview {
+     self.view.backgroundColor = [UIColor colorWithHexString:@"#25B7FF"];
+    for (NSInteger i = 0; i < 43; i++) {
+        UIImageView *snowView =  [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ele_snow.png"]];
+        snowView.tag = 1000+i;
+        snowView.frame = CGRectMake( arc4random() % 300 * kWidth , arc4random() % 400, arc4random()%7+3, arc4random()%7+3);
+        [self.view addSubview:snowView];
+        [snowView.layer addAnimation:[self rainAnimationWithDuration:5+i%5] forKey:nil];
+        [snowView.layer addAnimation:[self rainAlphaWithDuration:5+i%5] forKey:nil];
+        [snowView.layer addAnimation:[self sunshineAnimationWithDuration:5] forKey:nil];
+    }
+    self.view.layer.speed = 1.0;
+}
+
+- (CABasicAnimation *)rainAnimationWithDuration:(NSInteger)duration{
+    
+    CABasicAnimation* caBaseTransform = [CABasicAnimation animation];
+    caBaseTransform.duration = duration;
+    caBaseTransform.keyPath = @"transform";
+    caBaseTransform.repeatCount = MAXFLOAT;
+    caBaseTransform.removedOnCompletion = NO;
+    caBaseTransform.fillMode = kCAFillModeForwards;
+    caBaseTransform.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-170, -620, 0)];
+    caBaseTransform.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(kScreenH/2.0*34/124.0, kScreenH/2, 0)];
+    
+    return caBaseTransform;
+}
+- (CABasicAnimation *)rainAlphaWithDuration:(NSInteger)duration {
+    CABasicAnimation *showViewAnn = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    showViewAnn.fromValue = [NSNumber numberWithFloat:1.0];
+    showViewAnn.toValue = [NSNumber numberWithFloat:0.1];
+    showViewAnn.duration = duration;
+    showViewAnn.repeatCount = MAXFLOAT;
+    showViewAnn.fillMode = kCAFillModeForwards;
+    showViewAnn.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    showViewAnn.removedOnCompletion = NO;
+    
+    return showViewAnn;
+}
+- (CABasicAnimation *)sunshineAnimationWithDuration:(NSInteger)duration{
+    
+    CGFloat fromFloat = 0;
+    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.fromValue = [NSNumber numberWithFloat:fromFloat * M_PI];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:(fromFloat + 2.0 ) * M_PI];
+    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    rotationAnimation.duration = duration;
+    rotationAnimation.repeatCount = MAXFLOAT;
+    rotationAnimation.cumulative = NO;
+    rotationAnimation.removedOnCompletion = NO;
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    return rotationAnimation;
 }
 
 //-(void)scrollViewDidScroll:(UIScrollView *)scrollView {

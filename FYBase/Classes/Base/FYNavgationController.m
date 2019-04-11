@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#25B7FF"]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setShadowImage:[UIImage new]];
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

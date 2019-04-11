@@ -29,6 +29,7 @@
 		21036B10225D888900B4A054 /* FYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0F225D888900B4A054 /* FYHomeModel.m */; };
 		21036B13225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		21036B16225D9BCD00B4A054 /* UIImage+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B15225D9BCD00B4A054 /* UIImage+FYColor.m */; };
+		21036B19225DC3B700B4A054 /* ele_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21036B18225DC3B600B4A054 /* ele_snow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		21036B14225D9BCD00B4A054 /* UIImage+FYColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYColor.h"; sourceTree = "<group>"; };
 		21036B15225D9BCD00B4A054 /* UIImage+FYColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FYColor.m"; sourceTree = "<group>"; };
 		21036B17225D9C1B00B4A054 /* FYCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCategoryHeader.h; sourceTree = "<group>"; };
+		21036B18225DC3B600B4A054 /* ele_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ele_snow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				21036AA0225C74FB00B4A054 /* AppDelegate.h */,
 				21036AA1225C74FB00B4A054 /* AppDelegate.m */,
 				21036AE7225C76CF00B4A054 /* PrefixHeader.pch */,
+				21036B18225DC3B600B4A054 /* ele_snow.png */,
 				21036AA9225C74FC00B4A054 /* Assets.xcassets */,
 				21036AAB225C74FC00B4A054 /* LaunchScreen.storyboard */,
 				21036AAE225C74FC00B4A054 /* Info.plist */,
@@ -427,6 +430,7 @@
 			files = (
 				21036AAD225C74FC00B4A054 /* LaunchScreen.storyboard in Resources */,
 				21036AAA225C74FC00B4A054 /* Assets.xcassets in Resources */,
+				21036B19225DC3B700B4A054 /* ele_snow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = FYBase/PrefixHeader.pch;
 				INFOPLIST_FILE = FYBase/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,7 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = FYBase/PrefixHeader.pch;
 				INFOPLIST_FILE = FYBase/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,14 +15,12 @@
 
 @implementation HomeViewController
 
-
-
 -(void)configureCell:(FYHomeTableViewCell *)cell item:(NSString *)item {
     cell.label.text = item;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FYBaseViewController *baseVC = [[FYBaseViewController alloc] init];
+    HomeViewController *baseVC = [[HomeViewController alloc] init];
     [self.navigationController pushViewController:baseVC animated:YES];
 }
 
