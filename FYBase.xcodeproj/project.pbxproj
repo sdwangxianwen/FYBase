@@ -27,9 +27,11 @@
 		21036B05225C8AB900B4A054 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B04225C8AB900B4A054 /* HomeViewController.m */; };
 		21036B0C225CA02B00B4A054 /* FYHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */; };
 		21036B10225D888900B4A054 /* FYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B0F225D888900B4A054 /* FYHomeModel.m */; };
-		21036B13225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		21036B16225D9BCD00B4A054 /* UIImage+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 21036B15225D9BCD00B4A054 /* UIImage+FYColor.m */; };
 		21036B19225DC3B700B4A054 /* ele_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21036B18225DC3B600B4A054 /* ele_snow.png */; };
+		2103D052225ED91800EA24D3 /* FYLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103D051225ED91800EA24D3 /* FYLoginView.m */; };
+		2103D055225ED97900EA24D3 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103D054225ED97900EA24D3 /* FYLoginViewController.m */; };
+		210B83482264292A00814A54 /* FYCustomNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B83472264292A00814A54 /* FYCustomNavView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,12 +95,16 @@
 		21036B0B225CA02B00B4A054 /* FYHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHomeTableViewCell.m; sourceTree = "<group>"; };
 		21036B0E225D888900B4A054 /* FYHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYHomeModel.h; sourceTree = "<group>"; };
 		21036B0F225D888900B4A054 /* FYHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHomeModel.m; sourceTree = "<group>"; };
-		21036B11225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		21036B14225D9BCD00B4A054 /* UIImage+FYColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYColor.h"; sourceTree = "<group>"; };
 		21036B15225D9BCD00B4A054 /* UIImage+FYColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FYColor.m"; sourceTree = "<group>"; };
 		21036B17225D9C1B00B4A054 /* FYCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCategoryHeader.h; sourceTree = "<group>"; };
 		21036B18225DC3B600B4A054 /* ele_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ele_snow.png; sourceTree = "<group>"; };
+		2103D050225ED91800EA24D3 /* FYLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLoginView.h; sourceTree = "<group>"; };
+		2103D051225ED91800EA24D3 /* FYLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLoginView.m; sourceTree = "<group>"; };
+		2103D053225ED97900EA24D3 /* FYLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLoginViewController.h; sourceTree = "<group>"; };
+		2103D054225ED97900EA24D3 /* FYLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLoginViewController.m; sourceTree = "<group>"; };
+		210B83462264292A00814A54 /* FYCustomNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCustomNavView.h; sourceTree = "<group>"; };
+		210B83472264292A00814A54 /* FYCustomNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYCustomNavView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,8 @@
 				21036ADC225C763D00B4A054 /* FYTabBarController.m */,
 				21036ADE225C765800B4A054 /* FYNavgationController.h */,
 				21036ADF225C765800B4A054 /* FYNavgationController.m */,
+				210B83462264292A00814A54 /* FYCustomNavView.h */,
+				210B83472264292A00814A54 /* FYCustomNavView.m */,
 				21036AE1225C767200B4A054 /* FYBaseViewController.h */,
 				21036AE2225C767200B4A054 /* FYBaseViewController.m */,
 				21036AE4225C768D00B4A054 /* FYBaseModel.h */,
@@ -208,6 +216,7 @@
 		21036AD5225C75A400B4A054 /* Moudle */ = {
 			isa = PBXGroup;
 			children = (
+				2103D04D225ED8D400EA24D3 /* Login */,
 				21036B01225C8A9100B4A054 /* Home */,
 			);
 			path = Moudle;
@@ -225,8 +234,6 @@
 		21036AD7225C75C100B4A054 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				21036B11225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.h */,
-				21036B12225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m */,
 				21036AE9225C787900B4A054 /* NSString+PPString.h */,
 				21036AE8225C787900B4A054 /* NSString+PPString.m */,
 				21036AED225C787900B4A054 /* UIColor+FYColor.h */,
@@ -323,6 +330,33 @@
 				21036B0F225D888900B4A054 /* FYHomeModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2103D04D225ED8D400EA24D3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2103D04F225ED90000EA24D3 /* Controller */,
+				2103D04E225ED8F800EA24D3 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2103D04E225ED8F800EA24D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2103D050225ED91800EA24D3 /* FYLoginView.h */,
+				2103D051225ED91800EA24D3 /* FYLoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2103D04F225ED90000EA24D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2103D053225ED97900EA24D3 /* FYLoginViewController.h */,
+				2103D054225ED97900EA24D3 /* FYLoginViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,10 +489,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21036B13225D938800B4A054 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				210B83482264292A00814A54 /* FYCustomNavView.m in Sources */,
 				21036AFC225C7FC300B4A054 /* FYURL.m in Sources */,
+				2103D052225ED91800EA24D3 /* FYLoginView.m in Sources */,
 				21036AEE225C787A00B4A054 /* NSString+PPString.m in Sources */,
 				21036AE0225C765800B4A054 /* FYNavgationController.m in Sources */,
+				2103D055225ED97900EA24D3 /* FYLoginViewController.m in Sources */,
 				21036B16225D9BCD00B4A054 /* UIImage+FYColor.m in Sources */,
 				21036AEF225C787A00B4A054 /* UIColor+FYColor.m in Sources */,
 				21036AF8225C7D8900B4A054 /* UITableView+empety.m in Sources */,

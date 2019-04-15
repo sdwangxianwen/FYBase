@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (FYColor)
-+ (UIColor *) colorWithHexString: (NSString *)color;
++ (UIColor *) colorWithHexString:(NSString *)color;
++ (UIColor *) colorWithHexString:(NSString *)color aplha:(CGFloat)alpha;
 + (instancetype)colorRandom;
 @end
 

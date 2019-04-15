@@ -23,4 +23,19 @@
     
     return image;
 }
+
++ (UIImage *)imageWithColor:(NSString *)color alpha:(CGFloat)alpha {
+    if (color == nil) {
+        return nil;
+    }
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [[UIColor colorWithHexString:color aplha:alpha] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+    
+}
 @end

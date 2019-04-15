@@ -9,7 +9,7 @@
 #import "UIColor+FYColor.h"
 
 @implementation UIColor (FYColor)
-+ (UIColor *) colorWithHexString: (NSString *)hexString {
++ (UIColor *) colorWithHexString: (NSString *)hexString aplha:(CGFloat)alpha {
     NSString *cString = [[hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     //hexString应该6到8个字符
@@ -49,7 +49,10 @@
     [[NSScanner scannerWithString:gString] scanHexInt:&g];
     [[NSScanner scannerWithString:bString] scanHexInt:&b];
     
-    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
+    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
+}
++ (UIColor *) colorWithHexString: (NSString *)hexString {
+   return [self colorWithHexString:hexString aplha:1.0];
 }
 + (instancetype)colorRandom {
     return [UIColor colorWithR:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256) alpha:1];

@@ -8,36 +8,55 @@
 
 #import "FYBaseViewController.h"
 
-@interface FYBaseViewController ()
+
+@interface FYBaseViewController ()<UIGestureRecognizerDelegate>
+
+
 @end
 
 @implementation FYBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
     [self createBgview];
-    if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
-        [self initLeftBtn];
-    } else {
-        self.fd_prefersNavigationBarHidden = YES;
-    }
+    [self initNavBar];
+    [self setupNavLayout];
+    
 }
-
-//MARK:创建左边按钮
--(void)initLeftBtn {
-    self.leftBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    _leftBtn.titleLabel.font = [UIFont systemFontOfSize:18];
-    [_leftBtn setTitle:@"返回" forState:(UIControlStateNormal)];
-    [_leftBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
-    _leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
-    _leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    [_leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [_leftBtn setImage:[UIImage imageNamed:@"customBack"] forState:UIControlStateNormal];
-    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:_leftBtn];
-    self.navigationItem.leftBarButtonItem = barItem;
+-(void)initMainTableView {
+//    [self.view insertSubview:self.mainTableView belowSubview:self.navView];
+    [self.view addSubview:self.mainTableView];
 }
--(void)leftBtnClick {
-    [self.navigationController popViewControllerAnimated:YES];
+//MARK:自定义navBar
+-(void)initNavBar {
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    FYCustomNavView *navView = [[FYCustomNavView alloc] initWithFrame:CGRectMake(0, 0, kScreenw, NavBarHight)];
+    self.navView = navView;
+    [self.view addSubview:navView];
+    
+    [self.navView addSubview:self.leftBtn];
+    [self.navView addSubview:self.rightBtn];
+    [self.navView addSubview:self.righOthertBtn];
+    self.leftBtn.hidden = [self.navigationController.viewControllers indexOfObject:self] <= 0;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.view bringSubviewToFront:self.navView];
+    });
+    
+}
+//设置约束
+-(void)setupNavLayout {
+    self.leftBtn.frame = CGRectMake(0, StatusBarHeight, 60*kWidth, 44);
+    self.rightBtn.frame = CGRectMake(kScreenw - 44*kWidth, StatusBarHeight, 44*kWidth, 44);
+    self.righOthertBtn.frame  =CGRectMake(kScreenw - 88*kWidth, StatusBarHeight, 44*kWidth, 44);
+}
+-(void)setNavTitle:(NSString *)navTitle {
+    _navTitle = navTitle;
+    _navView.titleLabel.text = navTitle;
+}
+-(void)setNavColor:(NSString *)navColor {
+    _navColor = navColor;
+    self.navView.backgroundColor = [UIColor colorWithHexString:navColor];
 }
 
 /**
@@ -46,21 +65,6 @@
 -(void)showEmptyView {
     self.mainTableView.showEmptyView = YES;
 }
-
-//MARK:创建右边按钮
--(void)initRightBtn {
-    self.rightBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    _rightBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_rightBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
-    [_rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [_rightBtn setImage:[UIImage imageNamed:@"customBack"] forState:UIControlStateNormal];
-    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:_leftBtn];
-    self.navigationItem.rightBarButtonItem = barItem;
-}
--(void)rightBtnClick {
-    
-}
-
 
 /**
  MARK:下拉刷新
@@ -76,6 +80,44 @@
 //    [self.mainTableView.mj_footer endRefreshing];
 }
 
+-(void)leftBtnClick:(UIButton *)sender {
+    NSArray *VCArr = self.navigationController.viewControllers;
+    if (VCArr.count <= 0 ) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated: YES];
+    }
+}
+
+#pragma mark:懒加载控件
+-(UIButton *)leftBtn {
+    if (!_leftBtn){
+        _leftBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        
+        [_leftBtn setTitle:@"返回" forState:(UIControlStateNormal)];
+        [_leftBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+        [_leftBtn setImage:[UIImage imageNamed:@"icon_back"] forState:(UIControlStateNormal)];
+        [_leftBtn addTarget:self action:@selector(leftBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
+        _leftBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _leftBtn;
+}
+-(UIButton *)rightBtn {
+    if (!_rightBtn) {
+        _rightBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    }
+    return _rightBtn;
+}
+-(UIButton *)righOthertBtn {
+    if (!_righOthertBtn) {
+        _righOthertBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    }
+    return _righOthertBtn;
+}
+
+/**
+ tableview
+ */
 -(UITableView *)mainTableView {
     if (!_mainTableView) {
         _mainTableView = [[UITableView alloc] init];
@@ -83,7 +125,7 @@
         if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
             _mainTableView.frame = CGRectMake(0, 0, kScreenw, kScreenH);
         } else {
-            _mainTableView.frame = CGRectMake(0, 0, kScreenw, kScreenH - TabBarHeight);
+            _mainTableView.frame = CGRectMake(0, NavBarHight, kScreenw, kScreenH - TabBarHeight - NavBarHight);
         }
         _mainTableView.showsVerticalScrollIndicator = NO;
         _mainTableView.showsHorizontalScrollIndicator = NO;
@@ -215,23 +257,5 @@
     return rotationAnimation;
 }
 
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//    if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
-//        if (offsetY > StatusBarHeight) {
-//            self.fd_prefersNavigationBarHidden = NO;
-////            self.customNav.alpha = MIN(1,1 - (( NavBarHight + STATUS_BAR_HEIGHT - offsetY) / NavBarHight));
-//        }else {
-//            self.fd_prefersNavigationBarHidden = YES;
-////            self.customNav.alpha = 0;
-//        }
-//    } else {
-//        if (offsetY > StatusBarHeight) {
-////            self.navigationItem.title = self.titleLabel.text;
-//        } else {
-//            self.navigationItem.title = @"";
-//        }
-//    }
-//}
 
 @end

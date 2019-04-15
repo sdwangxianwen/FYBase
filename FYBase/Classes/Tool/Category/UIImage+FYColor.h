@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (FYColor)
 + (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)imageWithColor:(NSString *)color alpha:(CGFloat)alpha;
 @end
 
 NS_ASSUME_NONNULL_END

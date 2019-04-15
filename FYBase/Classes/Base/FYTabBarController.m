@@ -30,10 +30,10 @@
                         title:(NSString *)title
                         image:(NSString *)image
                   selectImage:(NSString *)selectImage {
-    childController.title = title;
-    childController.tabBarItem.image = [UIImage imageNamed:image];
-    childController.tabBarItem.selectedImage =[UIImage imageNamed:selectImage];
     FYNavgationController *nav = [[FYNavgationController alloc] initWithRootViewController:childController];
+    nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:[UIImage imageNamed:image] selectedImage:[[UIImage imageNamed:selectImage] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+    [nav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:(UIControlStateNormal)];
+    [nav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor orangeColor]} forState:(UIControlStateSelected)];
     [self addChildViewController:nav];
 }
 

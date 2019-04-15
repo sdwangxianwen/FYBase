@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "FYCustomNavView.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FYBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+/**
+ 自定义的NavView
+ */
+@property (nonatomic, strong)FYCustomNavView *navView;
 /**
  主视图,懒加载,需要的时候调用即可
  */
@@ -25,6 +30,18 @@ NS_ASSUME_NONNULL_BEGIN
  右边按钮
  */
 @property (nonatomic, strong)UIButton *rightBtn; //
+/**
+ 右边的第二个按钮
+ */
+@property (nonatomic, strong)UIButton *righOthertBtn;
+/**
+ 标题
+ */
+@property (nonatomic, strong)NSString *navTitle;
+/**
+ nav的背景颜色,默认透明
+ */
+@property (nonatomic, strong)NSString *navColor;
 /**
  是否需要下拉刷新,要写在加载当前tableview之前
  */
@@ -48,10 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param cell 自定义cell
  */
 - (void)configureCell:(id)cell item:(id)item;
-/**
- 创建nav的右边按钮
- */
--(void)initRightBtn;
+
 /**
  下拉刷新
  */
@@ -64,6 +78,10 @@ NS_ASSUME_NONNULL_BEGIN
  展示空数据,到当前的tableview上面
  */
 -(void)showEmptyView;
+/**
+ 添加主视图
+ */
+-(void)initMainTableView;
 @end
 
 NS_ASSUME_NONNULL_END
