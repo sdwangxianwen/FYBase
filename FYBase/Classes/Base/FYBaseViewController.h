@@ -43,6 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong)NSString *navColor;
 /**
+ 允许边缘返回,默认允许
+ */
+@property(nonatomic,assign)BOOL isCanSideBack;
+/**
  是否需要下拉刷新,要写在加载当前tableview之前
  */
 @property (nonatomic,assign)BOOL needDropRefresh; //
@@ -82,6 +86,15 @@ NS_ASSUME_NONNULL_BEGIN
  添加主视图
  */
 -(void)initMainTableView;
+
+/**
+ 关闭右滑返回
+ */
+-(void)forbiddenSideBack;
+/**
+ 开启右滑f返回
+ */
+- (void)resetSideBack;
 @end
 
 NS_ASSUME_NONNULL_END

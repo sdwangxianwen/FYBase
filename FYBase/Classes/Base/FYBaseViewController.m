@@ -21,16 +21,33 @@
     [self.navigationController setNavigationBarHidden:YES];
     [self createBgview];
     [self initNavBar];
-    [self setupNavLayout];
-    
+    [self setupNavLayout];   
 }
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
+    return self.isCanSideBack;
+}
+-(void)forbiddenSideBack {
+    self.isCanSideBack = NO;
+    //关闭ios右滑返回
+    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate=self;
+    }
+}
+- (void)resetSideBack {
+    self.isCanSideBack=YES;
+    //开启ios右滑返回
+    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+}
+
 -(void)initMainTableView {
 //    [self.view insertSubview:self.mainTableView belowSubview:self.navView];
     [self.view addSubview:self.mainTableView];
 }
 //MARK:自定义navBar
 -(void)initNavBar {
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
     FYCustomNavView *navView = [[FYCustomNavView alloc] initWithFrame:CGRectMake(0, 0, kScreenw, NavBarHight)];
     self.navView = navView;
     [self.view addSubview:navView];

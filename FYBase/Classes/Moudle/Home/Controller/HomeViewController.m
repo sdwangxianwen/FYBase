@@ -14,7 +14,17 @@
 
 @end
 
+
 @implementation HomeViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self forbiddenSideBack];
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self resetSideBack];
+}
 
 -(void)configureCell:(FYHomeTableViewCell *)cell item:(NSString *)item {
     cell.label.text = item;
